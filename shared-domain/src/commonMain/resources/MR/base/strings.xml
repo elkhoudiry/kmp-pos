@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="gram">Gram</string>
+    <string name="sell">Sell</string>
+    <string name="warehouse">Warehouse</string>
+    <string name="warehouses">Warehouses</string>
+    <string name="menu">Menu</string>
+    <string name="total">Total</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="code">Code</string>
+    <string name="name">Name</string>
+    <string name="purchace_price">Purchace price</string>
+    <string name="selling_price">Selling price</string>
+    <string name="available">Available</string>
+    <string name="count">Count</string>
+</resources>

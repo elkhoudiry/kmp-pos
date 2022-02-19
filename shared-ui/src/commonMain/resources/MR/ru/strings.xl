@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="gram">Gram</string>
+    <string name="sell">asdasasdad</string>
+    <string name="warehouse">المخزن</string>
+    <string name="warehouses">المخازن</string>
+    <string name="menu">القائمة</string>
+    <string name="total">الإجمالي</string>
+    <string name="confirm">تأكيد</string>
+    <string name="cancel">إلغاء</string>
+    <string name="code">كود</string>
+    <string name="name">الإسم</string>
+    <string name="purchace_price">سعر الشراء</string>
+    <string name="selling_price">سعر البيع</string>
+    <string name="available">متاح</string>
+    <string name="count">العدد</string>
+</resources>
