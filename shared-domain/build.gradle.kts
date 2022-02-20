@@ -45,6 +45,7 @@ kotlin {
                 api(JetbrainsDependencies.coroutinesAndroid)
                 api(MultiplatformDependencies.mokoResourcesAndroid)
                 api(MultiplatformDependencies.sqlDelightAndroidDriver)
+                api(MultiplatformDependencies.sqlDelightAndroidCoroutines)
                 api(KoinDependencies.koinAndroid)
             }
         }

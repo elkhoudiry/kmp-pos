@@ -1,6 +1,7 @@
 package com.elkhoudiry.di
 
 import com.elkhoudiry.domain.navigation.repositories.BaseNavigationRepository
+import com.elkhoudiry.pos.AppDatabase
 import com.elkhoudiry.ui.viewmodels.CheckoutPlatformViewModel
 import com.elkhoudiry.ui.viewmodels.MenuPlatformViewModel
 import com.elkhoudiry.ui.viewmodels.WarehousesPlatformViewModel
@@ -16,6 +17,8 @@ object Inject : KoinComponent {
 
     private val navRepository: BaseNavigationRepository by inject()
 
+    private val appDatabase: AppDatabase by inject()
+
     fun navRepository() = navRepository
 
     fun menuPlatformViewModel() = menuPlatformViewModel
@@ -23,4 +26,6 @@ object Inject : KoinComponent {
     fun checkoutPlatformViewModel() = checkoutPlatformViewMode
 
     fun warehousesPlatformViewModel() = warehousesPlatformViewModel
+
+    fun appDatabase() = appDatabase
 }

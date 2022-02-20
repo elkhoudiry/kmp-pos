@@ -1,3 +1,5 @@
+// ktlint-disable max-line-length
+
 object Versions {
     // Kotlin
     const val kotlinVersion = "1.6.10"
@@ -62,6 +64,7 @@ object MultiplatformDependencies{
     const val sqlDelightRuntimeDriver = "com.squareup.sqldelight:runtime:${Versions.sqlDelightVersion}"
     const val sqlDelightJVMDriver = "com.squareup.sqldelight:sqlite-driver:${Versions.sqlDelightVersion}"
     const val sqlDelightAndroidDriver = "com.squareup.sqldelight:android-driver:${Versions.sqlDelightVersion}"
+    const val sqlDelightAndroidCoroutines = "com.squareup.sqldelight:coroutines-extensions:${Versions.sqlDelightVersion}"
 }
 
 object TestDependencies{

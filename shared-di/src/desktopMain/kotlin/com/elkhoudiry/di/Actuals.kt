@@ -1,5 +1,7 @@
 package com.elkhoudiry.di
 
+import com.elkhoudiry.domain.db.DatabaseDriverFactory
+import com.elkhoudiry.pos.AppDatabase
 import com.elkhoudiry.presentation.screens.checkout.CheckoutViewModel
 import com.elkhoudiry.presentation.screens.menu.MenuViewModel
 import com.elkhoudiry.presentation.screens.warehouses.WarehousesViewModel
@@ -20,4 +22,11 @@ actual val platformViewModelsModule = module {
     factory {
         WarehousesPlatformViewModel(WarehousesViewModel())
     }
+}
+
+actual val sqlDelightModule = module {
+
+    single { DatabaseDriverFactory().createDriver() }
+
+    single { AppDatabase(get()) }
 }
