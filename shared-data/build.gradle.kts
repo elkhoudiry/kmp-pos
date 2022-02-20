@@ -30,6 +30,10 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
+        val androidAndroidTestRelease by getting
+        val androidTest by getting {
+            dependsOn(androidAndroidTestRelease)
+        }
     }
 }
 

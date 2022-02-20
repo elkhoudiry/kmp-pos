@@ -41,6 +41,10 @@ kotlin {
                 api(MultiplatformDependencies.mokoResourcesAndroid)
             }
         }
+        val androidAndroidTestRelease by getting
+        val androidTest by getting {
+            dependsOn(androidAndroidTestRelease)
+        }
         val desktopMain by getting {
             dependencies {
             }

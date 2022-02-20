@@ -44,7 +44,9 @@ kotlin {
                 api(KoinDependencies.koinAndroid)
             }
         }
+        val androidAndroidTestRelease by getting
         val androidTest by getting {
+            dependsOn(androidAndroidTestRelease)
             dependencies {
                 implementation("junit:junit:4.13")
             }
