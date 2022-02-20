@@ -30,3 +30,9 @@ allprojects {
 plugins {
     id(Plugins.ktlintGradle) version Versions.ktlintGradlePluginVersion
 }
+
+ktlint {
+    filter {
+        exclude("**/generated/**")
+    }
+}
