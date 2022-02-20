@@ -18,7 +18,7 @@ object Versions {
 
     // Kotlin MultiPlatform Libs
     const val mokoResourcesVersion = "0.18.0"
-
+    const val sqlDelightVersion = "1.5.3"
 }
 
 object ClassPaths {
@@ -26,10 +26,13 @@ object ClassPaths {
     const val kotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:${Versions.kotlinVersion}"
     const val androidGradleBuildTools = "com.android.tools.build:gradle:${Versions.androidGradleBuildVersion}"
     const val mokoResourcesGenerator = "dev.icerock.moko:resources-generator:${Versions.mokoResourcesVersion}"
+    const val sqlDelight = "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelightVersion}"
 }
 
 object Plugins{
+    const val kotlin = "kotlin"
     const val ktlintGradle = "org.jlleitschuh.gradle.ktlint"
+    const val sqlDelight = "com.squareup.sqldelight"
 }
 
 object AndroidXDependencies {
@@ -53,4 +56,7 @@ object JetbrainsDependencies{
 object MultiplatformDependencies{
     const val mokoResources = "dev.icerock.moko:resources:${Versions.mokoResourcesVersion}"
     const val mokoResourcesAndroid = "dev.icerock.moko:resources-compose:${Versions.mokoResourcesVersion}"
+    const val sqlDelightRuntimeDriver = "com.squareup.sqldelight:runtime:${Versions.sqlDelightVersion}"
+    const val sqlDelightJVMDriver = "com.squareup.sqldelight:sqlite-driver:${Versions.sqlDelightVersion}"
+    const val sqlDelightAndroidDriver = "com.squareup.sqldelight:android-driver:${Versions.sqlDelightVersion}"
 }

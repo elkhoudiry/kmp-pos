@@ -1,8 +1,11 @@
+@file:Suppress("UNUSED_VARIABLE")
+
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("com.android.library")
     id("dev.icerock.mobile.multiplatform-resources")
+    id(Plugins.sqlDelight)
 }
 
 group = "com.elkhoudiry"
@@ -19,6 +22,7 @@ kotlin {
             kotlinOptions.jvmTarget = "11"
         }
     }
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -27,6 +31,7 @@ kotlin {
                 api(JetbrainsDependencies.kotlinXSerializationJson)
                 api(KoinDependencies.koinCore)
                 api(MultiplatformDependencies.mokoResources)
+                api(MultiplatformDependencies.sqlDelightRuntimeDriver)
             }
         }
         val commonTest by getting {
@@ -39,6 +44,7 @@ kotlin {
             dependencies {
                 api(JetbrainsDependencies.coroutinesAndroid)
                 api(MultiplatformDependencies.mokoResourcesAndroid)
+                api(MultiplatformDependencies.sqlDelightAndroidDriver)
             }
         }
         val androidAndroidTestRelease by getting
@@ -47,17 +53,18 @@ kotlin {
         }
         val desktopMain by getting {
             dependencies {
+                api(MultiplatformDependencies.sqlDelightJVMDriver)
             }
         }
     }
 }
 
 android {
-    compileSdkVersion(31)
+    compileSdk = 31
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(31)
+        minSdk = 24
+        targetSdk = 31
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -68,4 +75,10 @@ android {
 multiplatformResources {
     multiplatformResourcesPackage = "com.elkhoudiry.domain"
     multiplatformResourcesSourceSet = "commonMain"
+}
+
+sqldelight {
+    database("AppDatabase") {
+        packageName = "com.elkhoudiry.pos"
+    }
 }

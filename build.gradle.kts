@@ -10,6 +10,7 @@ buildscript {
         classpath(ClassPaths.androidGradleBuildTools)
         classpath(ClassPaths.kotlinSerialization)
         classpath(ClassPaths.mokoResourcesGenerator)
+        classpath(ClassPaths.sqlDelight)
     }
 }
 
@@ -25,6 +26,7 @@ allprojects {
 
     apply(plugin = Plugins.ktlintGradle)
 }
+
 
 plugins {
     id(Plugins.ktlintGradle) version Versions.ktlintGradlePluginVersion
