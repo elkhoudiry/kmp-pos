@@ -62,6 +62,7 @@ private fun BaseMenuItem(
     }
 }
 
+@Composable
 private fun getTextStyle(strikethrough: Boolean): TextStyle {
     val style = AppTheme.type.body1
     return if (!strikethrough) style else style.copy(textDecoration = TextDecoration.LineThrough)

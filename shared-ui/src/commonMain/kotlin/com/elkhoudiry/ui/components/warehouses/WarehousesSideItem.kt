@@ -44,6 +44,7 @@ fun WarehousesSideItem(
     }
 }
 
+@Composable
 private fun getSurfaceColor(isSelected: Boolean): Color {
     return if (isSelected) {
         AppTheme.colors.primary.toColor()
@@ -52,6 +53,7 @@ private fun getSurfaceColor(isSelected: Boolean): Color {
     }
 }
 
+@Composable
 private fun getTextColor(isSelected: Boolean): Color {
     return if (isSelected) {
         AppTheme.colors.onPrimary.toColor()
