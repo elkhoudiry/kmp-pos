@@ -27,7 +27,6 @@ allprojects {
     apply(plugin = Plugins.ktlintGradle)
 }
 
-
 plugins {
     id(Plugins.ktlintGradle) version Versions.ktlintGradlePluginVersion
 }

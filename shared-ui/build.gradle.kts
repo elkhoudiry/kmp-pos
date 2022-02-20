@@ -1,6 +1,7 @@
+@file:Suppress("UNUSED_VARIABLE")
+
 import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-
 
 plugins {
     kotlin("multiplatform")
@@ -41,14 +42,13 @@ kotlin {
                 api(AndroidXDependencies.coreKtx)
                 api(AndroidXDependencies.lifecycleRunTimeKtx)
                 api(AndroidXDependencies.lifecycleViewModelKtx)
-                api(KoinDependencies.koinAndroid)
             }
         }
         val androidAndroidTestRelease by getting
         val androidTest by getting {
             dependsOn(androidAndroidTestRelease)
             dependencies {
-                implementation("junit:junit:4.13")
+                implementation(TestDependencies.junit4)
             }
         }
         val desktopMain by getting {
@@ -62,11 +62,11 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(31)
+    compileSdk = 31
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(31)
+        minSdk = 24
+        targetSdk = 31
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

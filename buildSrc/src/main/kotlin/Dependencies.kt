@@ -19,6 +19,9 @@ object Versions {
     // Kotlin MultiPlatform Libs
     const val mokoResourcesVersion = "0.18.0"
     const val sqlDelightVersion = "1.5.3"
+
+    // Test
+    const val junit4Version = "4.13.2"
 }
 
 object ClassPaths {
@@ -59,4 +62,8 @@ object MultiplatformDependencies{
     const val sqlDelightRuntimeDriver = "com.squareup.sqldelight:runtime:${Versions.sqlDelightVersion}"
     const val sqlDelightJVMDriver = "com.squareup.sqldelight:sqlite-driver:${Versions.sqlDelightVersion}"
     const val sqlDelightAndroidDriver = "com.squareup.sqldelight:android-driver:${Versions.sqlDelightVersion}"
+}
+
+object TestDependencies{
+    const val junit4 = "junit:junit:${Versions.junit4Version}"
 }
