@@ -2,6 +2,7 @@ package com.elkhoudiry.ui.helpers
 
 import androidx.compose.foundation.LocalScrollbarStyle
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.ScrollbarStyle
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.lazy.LazyListState
@@ -15,12 +16,9 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
-import com.elkhoudiry.ui.app.CommonGlobals
 import com.elkhoudiry.ui.theme.AppTheme
 import com.elkhoudiry.ui.theme.toColor
 import dev.icerock.moko.resources.StringResource
-import dev.icerock.moko.resources.desc.Resource
-import dev.icerock.moko.resources.desc.StringDesc
 
 actual typealias ResContext = Any
 
@@ -42,15 +40,25 @@ actual fun getRotatedBackArrow(): ImageVector {
 }
 
 @Composable
-actual fun DropdownMenu(expanded: Boolean, onDismissRequest: () -> Unit, content: @Composable ColumnScope.() -> Unit) {
+actual fun DropdownMenu(
+    expanded: Boolean,
+    onDismissRequest: () -> Unit,
+    content: @Composable ColumnScope.() -> Unit
+) {
     androidx.compose.material.DropdownMenu(
         expanded = expanded, onDismissRequest = onDismissRequest, content = content
     )
 }
 
 @Composable
-actual fun DropdownMenuItem(modifier: Modifier, onClick: () -> Unit, content: @Composable RowScope.() -> Unit) {
-    androidx.compose.material.DropdownMenuItem(modifier = modifier, onClick = onClick, content = content)
+actual fun DropdownMenuItem(
+    modifier: Modifier,
+    onClick: () -> Unit,
+    content: @Composable RowScope.() -> Unit
+) {
+    androidx.compose.material.DropdownMenuItem(
+        modifier = modifier, onClick = onClick, content = content
+    )
 }
 
 @Composable
@@ -58,7 +66,7 @@ actual fun VerticalScrollbar(modifier: Modifier, state: LazyListState) {
     androidx.compose.foundation.VerticalScrollbar(
         modifier = modifier,
         adapter = rememberScrollbarAdapter(scrollState = state),
-        style = LocalScrollbarStyle.current.copy(unhoverColor = AppTheme.colors.primary.toColor().copy(alpha = 0.3f))
+        style = scrollBarStyle()
     )
 }
 
@@ -67,7 +75,7 @@ actual fun VerticalScrollbar(modifier: Modifier, state: ScrollState) {
     androidx.compose.foundation.VerticalScrollbar(
         modifier = modifier,
         adapter = rememberScrollbarAdapter(scrollState = state),
-        style = LocalScrollbarStyle.current.copy(unhoverColor = AppTheme.colors.primary.toColor().copy(alpha = 0.3f))
+        style = scrollBarStyle()
     )
 }
 
@@ -76,7 +84,7 @@ actual fun HorizontalScrollbar(modifier: Modifier, state: LazyListState) {
     androidx.compose.foundation.HorizontalScrollbar(
         modifier = modifier,
         adapter = rememberScrollbarAdapter(scrollState = state),
-        style = LocalScrollbarStyle.current.copy(unhoverColor = AppTheme.colors.primary.toColor().copy(alpha = 0.3f))
+        style = scrollBarStyle()
     )
 }
 
@@ -85,10 +93,17 @@ actual fun HorizontalScrollbar(modifier: Modifier, state: ScrollState) {
     androidx.compose.foundation.HorizontalScrollbar(
         modifier = modifier,
         adapter = rememberScrollbarAdapter(scrollState = state),
-        style = LocalScrollbarStyle.current.copy(unhoverColor = AppTheme.colors.primary.toColor().copy(alpha = 0.3f))
+        style = scrollBarStyle()
     )
 }
 
 actual fun getMRString(resource: StringResource, context: ResContext): String {
     return resource.localized()
+}
+
+@Composable
+private fun scrollBarStyle(): ScrollbarStyle {
+    return LocalScrollbarStyle.current.copy(
+        unhoverColor = AppTheme.colors.primary.toColor().copy(alpha = 0.3f)
+    )
 }

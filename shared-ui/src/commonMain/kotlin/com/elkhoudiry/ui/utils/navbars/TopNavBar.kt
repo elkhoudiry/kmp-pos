@@ -16,11 +16,18 @@ import com.elkhoudiry.ui.utils.spacing.SmallSpacerHorizontal
 
 @Composable
 fun TopNavBar(
-    modifier: Modifier, state: NavBarState, onNav: (to: NavDestination) -> Unit,
-
+    modifier: Modifier,
+    state: NavBarState,
+    onNav: (to: NavDestination) -> Unit,
+) {
+    Row(
+        modifier = modifier, verticalAlignment = Alignment.CenterVertically
     ) {
-    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
-        Text(text = "القائمة", style = AppTheme.type.h1, color = AppTheme.colors.onBackground.toColor())
+        Text(
+            text = "القائمة",
+            style = AppTheme.type.h1,
+            color = AppTheme.colors.onBackground.toColor()
+        )
 
         SmallSpacerHorizontal()
 

@@ -9,7 +9,8 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun SheetContent(
-    heightFraction: Float = 0.9f, content: @Composable BoxScope.() -> Unit
+    heightFraction: Float = 0.9f,
+    content: @Composable BoxScope.() -> Unit
 ) {
     Box(
         Modifier.fillMaxWidth().fillMaxHeight(fraction = heightFraction)

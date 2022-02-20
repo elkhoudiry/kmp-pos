@@ -1,7 +1,11 @@
 package com.elkhoudiry.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.*
+import androidx.compose.material.Colors
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Shapes
+import androidx.compose.material.Typography
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
@@ -14,7 +18,8 @@ import com.elkhoudiry.presentation.theme.normalDimensions
 
 @Composable
 fun AppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable() () -> Unit,
 ) {
     val palette = if (darkTheme) darkColors else com.elkhoudiry.presentation.theme.lightColors
 
@@ -24,12 +29,15 @@ fun AppTheme(
 
     val type = Typography
 
-    ProvideTypography(type){
+    ProvideTypography(type) {
         ProvideShapes(shapes = shapes) {
             ProvideAppColors(colors = palette, isLight = !darkTheme) {
                 ProvideDimens(dimensions = dimensions) {
                     MaterialTheme(
-                        colors = palette.toColors(!darkTheme), typography = type, shapes = shapes, content = content
+                        colors = palette.toColors(!darkTheme),
+                        typography = type,
+                        shapes = shapes,
+                        content = content
                     )
                 }
             }
@@ -73,7 +81,9 @@ private fun ColorPallet.toColors(isLight: Boolean): Colors {
 
 @Composable
 fun ProvideAppColors(
-    colors: ColorPallet, isLight: Boolean, content: @Composable () -> Unit
+    colors: ColorPallet,
+    isLight: Boolean,
+    content: @Composable () -> Unit,
 ) {
     val colorPalette = remember { colors }
     CompositionLocalProvider(
@@ -87,7 +97,8 @@ private fun localAppColors(isLight: Boolean) = staticCompositionLocalOf {
 
 @Composable
 fun ProvideDimens(
-    dimensions: Dimensions, content: @Composable () -> Unit
+    dimensions: Dimensions,
+    content: @Composable () -> Unit,
 ) {
     val dimensionSet = remember { dimensions }
     CompositionLocalProvider(
@@ -97,7 +108,8 @@ fun ProvideDimens(
 
 @Composable
 fun ProvideShapes(
-    shapes: Shapes, content: @Composable () -> Unit
+    shapes: Shapes,
+    content: @Composable () -> Unit,
 ) {
     val dimensionSet = remember { shapes }
     CompositionLocalProvider(
@@ -107,14 +119,14 @@ fun ProvideShapes(
 
 @Composable
 fun ProvideTypography(
-    type: Typography, content: @Composable () -> Unit
+    type: Typography,
+    content: @Composable () -> Unit,
 ) {
     val typeSet = remember { type }
     CompositionLocalProvider(
         LocalAppTypography provides typeSet, content = content
     )
 }
-
 
 val LocalAppDimens = staticCompositionLocalOf {
     normalDimensions

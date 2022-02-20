@@ -4,13 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.elkhoudiry.presentation.screens.checkout.CheckoutEvent
 import com.elkhoudiry.presentation.screens.checkout.CheckoutViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 actual class CheckoutPlatformViewModel(
     private val viewModel: CheckoutViewModel
-): ViewModel() {
+) : ViewModel() {
 
     init {
         viewModelScope.launch { viewModel.listenMenuInteractions() }

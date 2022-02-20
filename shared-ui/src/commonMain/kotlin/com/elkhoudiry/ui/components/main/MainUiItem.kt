@@ -14,7 +14,11 @@ import com.elkhoudiry.ui.theme.AppTheme
 import com.elkhoudiry.ui.theme.toColor
 
 @Composable
-fun MainUiItem(modifier: Modifier, item: String, onClick: () -> Unit) {
+fun MainUiItem(
+    modifier: Modifier,
+    item: String,
+    onClick: () -> Unit,
+) {
     Surface(
         modifier = modifier.clickable { onClick() },
         elevation = AppTheme.dimens.menuCellElevation.dp,
@@ -26,7 +30,9 @@ fun MainUiItem(modifier: Modifier, item: String, onClick: () -> Unit) {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = item, color = AppTheme.colors.onSurface.toColor(), style = AppTheme.type.body1
+                text = item,
+                color = AppTheme.colors.onSurface.toColor(),
+                style = AppTheme.type.body1
             )
         }
     }

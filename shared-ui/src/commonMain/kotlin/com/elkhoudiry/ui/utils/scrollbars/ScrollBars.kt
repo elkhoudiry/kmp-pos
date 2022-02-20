@@ -13,8 +13,10 @@ import com.elkhoudiry.ui.theme.AppTheme
 import com.elkhoudiry.ui.theme.toColor
 
 @Composable
- fun Modifier.simpleVerticalScrollbar(
-    state: LazyListState, width: Dp = 2.dp, color: Color = AppTheme.colors.primary.toColor()
+fun Modifier.simpleVerticalScrollbar(
+    state: LazyListState,
+    width: Dp = 2.dp,
+    color: Color = AppTheme.colors.primary.toColor()
 ): Modifier {
     return drawWithContent {
         drawContent()
@@ -37,8 +39,10 @@ import com.elkhoudiry.ui.theme.toColor
 }
 
 @Composable
- fun Modifier.simpleHorizontalScrollbar(
-    state: LazyListState, height: Dp = 2.dp, color: Color = AppTheme.colors.confirm.toColor()
+fun Modifier.simpleHorizontalScrollbar(
+    state: LazyListState,
+    height: Dp = 2.dp,
+    color: Color = AppTheme.colors.confirm.toColor()
 ): Modifier {
     return drawWithContent {
         drawContent()

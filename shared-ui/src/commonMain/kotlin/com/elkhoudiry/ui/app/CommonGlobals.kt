@@ -2,6 +2,6 @@ package com.elkhoudiry.ui.app
 
 import com.elkhoudiry.ui.helpers.ResContext
 
-object CommonGlobals{
+object CommonGlobals {
     lateinit var resContext: ResContext
 }

@@ -15,7 +15,9 @@ class CheckoutViewModel(
 
     suspend fun listenMenuInteractions() {
         menuInteractions.listen().collect {
-            _state.value = _state.value.copy(itemsToCheckout = _state.value.itemsToCheckout.added(it))
+            _state.value = _state.value.copy(
+                itemsToCheckout = _state.value.itemsToCheckout.added(it)
+            )
         }
     }
 
@@ -27,13 +29,14 @@ class CheckoutViewModel(
             CheckoutEvent.ClearItems -> {
                 clearItems()
             }
-
         }
     }
 
     private fun itemClick(item: ListingItem) {
         val index = _state.value.itemsToCheckout.lastIndexOf(item)
-        _state.value = _state.value.copy(itemsToCheckout = _state.value.itemsToCheckout.removed(index))
+        _state.value = _state.value.copy(
+            itemsToCheckout = _state.value.itemsToCheckout.removed(index)
+        )
     }
 
     private fun clearItems() {

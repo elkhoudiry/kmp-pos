@@ -15,7 +15,9 @@ import com.elkhoudiry.ui.theme.toColor
 
 @Composable
 fun WarehousesSide(
-    modifier: Modifier, state: WarehousesState, onWarehouseClick: (Int) -> Unit,
+    modifier: Modifier,
+    state: WarehousesState,
+    onWarehouseClick: (Int) -> Unit,
 ) {
     LazyColumn(
         modifier = modifier.background(AppTheme.colors.background.toColor())

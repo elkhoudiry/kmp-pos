@@ -1,6 +1,5 @@
 package com.elkhoudiry.presentation.screens.warehouses
 
-import com.elkhoudiry.domain.utils.added
 import com.elkhoudiry.domain.warehouses.models.Warehouse
 import com.elkhoudiry.presentation.screens.menu.fakeItems
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -30,6 +29,6 @@ class WarehousesViewModel {
 
 val fakeWarehouses = listOf(
     Warehouse(0, "Main", fakeItems),
-    Warehouse(1, "South", listOf(fakeItems[0], fakeItems[2], fakeItems[3].copy(isAvailable = false))),
+    Warehouse(1, "South", listOf(fakeItems[0], fakeItems[3].copy(isAvailable = false))),
     Warehouse(2, "East", listOf(fakeItems[0], fakeItems[1], fakeItems[2])),
 )

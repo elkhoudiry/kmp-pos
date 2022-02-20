@@ -39,9 +39,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.unit.LayoutDirection.Ltr
 import androidx.compose.ui.unit.dp
 import com.sahu.foundation.CarouselScrollState
-import com.sahu.foundation.horizontalScroll
 import com.sahu.foundation.rememberCarouselScrollState
-import com.sahu.foundation.verticalScroll
 
 /**
  * Carousel View.
@@ -179,14 +177,16 @@ fun Carousel(
     maxPercentage: Float = DefaultCarouselMaxPercentage,
     colors: CarouselColors = CarouselDefaults.colors(),
     scrolled: () -> Int,
-) = CarouselImpl(scrolled = scrolled.invoke(),
+) = CarouselImpl(
+    scrolled = scrolled.invoke(),
     maxScroll = totalLength - state.layoutInfo.viewportEndOffset,
     length = totalLength,
     modifier = modifier,
     isScrollInProgress = state.isScrollInProgress,
     minPercentage = minPercentage,
     maxPercentage = maxPercentage,
-    colors = colors)
+    colors = colors
+)
 
 @Composable
 private fun CarouselImpl(
@@ -202,7 +202,7 @@ private fun CarouselImpl(
     require(0f < minPercentage) { "min should be > 0f." }
     require(minPercentage <= maxPercentage) { "min should be < max." }
     require(maxPercentage < 1f) { "max should be less than 1f." }
-    if (length <= 0 || maxScroll <= 0) return //Will not draw when there is nothing to scroll.
+    if (length <= 0 || maxScroll <= 0) return // Will not draw when there is nothing to scroll.
 
     Canvas(modifier = modifier.size(DefaultCarouselWidth, DefaultCarouselHeight)) {
         val isLtr = layoutDirection == Ltr
@@ -214,7 +214,7 @@ private fun CarouselImpl(
         val barLength = if (isVertical) height else width
         val barWidth = if (isVertical) width else height
 
-        val viewportRatio = (length - maxScroll) / length.toFloat() //ViewPort length / length
+        val viewportRatio = (length - maxScroll) / length.toFloat() // ViewPort length / length
         val ratio = viewportRatio.coerceIn(minPercentage, maxPercentage)
 
         val thumbLength = ratio * barLength
@@ -224,7 +224,7 @@ private fun CarouselImpl(
         val yOffset = barWidth / 2
 
         val barStart = if (isLtr) xOffset else maxScrollLength - xOffset
-        val barEnd = barStart + thumbLength //if (isLtr) xOffset + thumbWidth else length - xOffset
+        val barEnd = barStart + thumbLength // if (isLtr) xOffset + thumbWidth else length - xOffset
 
         fun drawLine(
             brush: Brush,
@@ -238,10 +238,10 @@ private fun CarouselImpl(
             strokeWidth = barWidth,
         )
 
-        //Draw Background
+        // Draw Background
         drawLine(colors.backgroundBrush(isScrollInProgress), 0f, barLength)
 
-        //Draw Thumb
+        // Draw Thumb
         drawLine(colors.thumbBrush(isScrollInProgress), barStart, barEnd)
     }
 }
@@ -294,7 +294,6 @@ interface CarouselColors {
      * @see [ScrollableState.isScrollInProgress]
      */
     fun backgroundBrush(isScrollInProgress: Boolean): Brush
-
 }
 
 object CarouselDefaults {

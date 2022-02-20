@@ -8,5 +8,5 @@ sealed class NavDestination {
 
     object WareHouses : NavDestination()
 
-    object NONE: NavDestination()
+    object NONE : NavDestination()
 }

@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.elkhoudiry.domain.warehouses.models.Warehouse
 import com.elkhoudiry.ui.theme.AppTheme
@@ -17,13 +18,16 @@ import com.elkhoudiry.ui.theme.toColor
 
 @Composable
 fun WarehousesSideItem(
-    modifier: Modifier, warehouse: Warehouse, isSelected: Boolean, onClick: (Int) -> Unit
+    modifier: Modifier,
+    warehouse: Warehouse,
+    isSelected: Boolean,
+    onClick: (Int) -> Unit,
 ) {
     Surface(
         modifier = modifier.padding(AppTheme.dimens.warehouseItemPadding.dp)
             .clickable { onClick(warehouse.id) },
         elevation = AppTheme.dimens.warehouseItemElevation.dp,
-        color = if (isSelected) AppTheme.colors.primary.toColor() else AppTheme.colors.surface.toColor(),
+        color = getSurfaceColor(isSelected),
         shape = AppTheme.shapes.small
     ) {
         Row(
@@ -34,8 +38,24 @@ fun WarehousesSideItem(
             Text(
                 text = warehouse.name,
                 style = AppTheme.type.body1,
-                color = if (isSelected) AppTheme.colors.onPrimary.toColor() else AppTheme.colors.onSurface.toColor()
+                color = getTextColor(isSelected)
             )
         }
+    }
+}
+
+private fun getSurfaceColor(isSelected: Boolean): Color {
+    return if (isSelected) {
+        AppTheme.colors.primary.toColor()
+    } else {
+        AppTheme.colors.surface.toColor()
+    }
+}
+
+private fun getTextColor(isSelected: Boolean): Color {
+    return if (isSelected) {
+        AppTheme.colors.onPrimary.toColor()
+    } else {
+        AppTheme.colors.onSurface.toColor()
     }
 }

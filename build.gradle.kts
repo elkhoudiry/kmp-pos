@@ -8,8 +8,8 @@ buildscript {
     dependencies {
         classpath(ClassPaths.kotlinGradlePlugin)
         classpath(ClassPaths.androidGradleBuildTools)
-        classpath( ClassPaths.kotlinSerialization)
-        classpath (ClassPaths.mokoResourcesGenerator)
+        classpath(ClassPaths.kotlinSerialization)
+        classpath(ClassPaths.mokoResourcesGenerator)
     }
 }
 
@@ -22,4 +22,10 @@ allprojects {
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
+
+    apply(plugin = Plugins.ktlintGradle)
+}
+
+plugins {
+    id(Plugins.ktlintGradle) version Versions.ktlintGradlePluginVersion
 }

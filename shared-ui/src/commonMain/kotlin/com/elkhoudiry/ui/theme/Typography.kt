@@ -12,21 +12,29 @@ private val Raleway = FontFamily(
 )
 
 val Typography = Typography(
-    defaultFontFamily = Raleway, h1 = TextStyle(
+    defaultFontFamily = Raleway,
+    h1 = TextStyle(
         fontSize = 30.sp,
-    ), h2 = TextStyle(
+    ),
+    h2 = TextStyle(
         fontSize = 26.sp,
-    ), h3 = TextStyle(
+    ),
+    h3 = TextStyle(
         fontSize = 24.sp,
-    ), h4 = TextStyle(
+    ),
+    h4 = TextStyle(
         fontSize = 20.sp,
-    ), subtitle1 = TextStyle(
+    ),
+    subtitle1 = TextStyle(
         fontSize = 18.sp
-    ), body1 = TextStyle(
+    ),
+    body1 = TextStyle(
         fontSize = 16.sp,
-    ), body2 = TextStyle(
+    ),
+    body2 = TextStyle(
         fontSize = 14.sp,
-    ), caption = TextStyle(
+    ),
+    caption = TextStyle(
         fontSize = 11.sp, fontWeight = FontWeight.Medium
     )
 )

@@ -35,15 +35,14 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting{
-            dependencies{
-                api (JetbrainsDependencies.coroutinesAndroid)
-                api (MultiplatformDependencies.mokoResourcesAndroid)
+        val androidMain by getting {
+            dependencies {
+                api(JetbrainsDependencies.coroutinesAndroid)
+                api(MultiplatformDependencies.mokoResourcesAndroid)
             }
         }
-        val desktopMain by getting{
-            dependencies{
-
+        val desktopMain by getting {
+            dependencies {
             }
         }
     }

@@ -2,7 +2,6 @@ package com.elkhoudiry.ui.helpers
 
 import android.app.Application
 import android.content.Context
-import android.util.Log
 import android.view.View
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.ColumnScope
@@ -35,7 +34,10 @@ actual fun getImageFromResource(resource: ImageResource): Painter {
 }
 
 actual fun isLTR(): Boolean {
-    return (CommonGlobals.resContext as Context).resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR
+    return (CommonGlobals.resContext as Context)
+        .resources
+        .configuration
+        .layoutDirection == View.LAYOUT_DIRECTION_LTR
 }
 
 actual fun getRotatedBackArrow(): ImageVector {
@@ -43,39 +45,44 @@ actual fun getRotatedBackArrow(): ImageVector {
 }
 
 @Composable
-actual fun DropdownMenu(expanded: Boolean, onDismissRequest: () -> Unit, content: @Composable ColumnScope.() -> Unit) {
+actual fun DropdownMenu(
+    expanded: Boolean,
+    onDismissRequest: () -> Unit,
+    content: @Composable ColumnScope.() -> Unit
+) {
     androidx.compose.material.DropdownMenu(
         expanded = expanded, onDismissRequest = onDismissRequest, content = content
     )
 }
 
 @Composable
-actual fun DropdownMenuItem(modifier: Modifier, onClick: () -> Unit, content: @Composable RowScope.() -> Unit) {
-    androidx.compose.material.DropdownMenuItem(modifier = modifier, onClick = onClick, content = content)
+actual fun DropdownMenuItem(
+    modifier: Modifier,
+    onClick: () -> Unit,
+    content: @Composable RowScope.() -> Unit
+) {
+    androidx.compose.material.DropdownMenuItem(
+        modifier = modifier, onClick = onClick, content = content
+    )
 }
 
 @Composable
 actual fun VerticalScrollbar(modifier: Modifier, state: LazyListState) {
-
 }
 
 @Composable
 actual fun VerticalScrollbar(modifier: Modifier, state: ScrollState) {
-
 }
 
 @Composable
 actual fun HorizontalScrollbar(modifier: Modifier, state: LazyListState) {
-
 }
 
 @Composable
 actual fun HorizontalScrollbar(modifier: Modifier, state: ScrollState) {
-
 }
 
 @Composable
 actual fun getMRString(resource: StringResource, context: ResContext): String {
-    Log.d("TAGGY", "locale: ${context.resources.configuration.locale}")
     return StringDesc.Resource(resource).toString(context)
 }

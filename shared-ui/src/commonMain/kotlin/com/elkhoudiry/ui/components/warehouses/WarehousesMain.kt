@@ -5,13 +5,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.elkhoudiry.presentation.screens.warehouses.WarehousesState
 import com.elkhoudiry.domain.MR
+import com.elkhoudiry.presentation.screens.warehouses.WarehousesState
 import com.elkhoudiry.ui.app.CommonGlobals
 import com.elkhoudiry.ui.helpers.getMRString
 import com.elkhoudiry.ui.helpers.getRotatedBackArrow
@@ -23,7 +21,9 @@ import com.elkhoudiry.ui.utils.tables.DynamicTable
 
 @Composable
 fun WarehousesMain(
-    modifier: Modifier, state: WarehousesState, onBackClick: () -> Unit
+    modifier: Modifier,
+    state: WarehousesState,
+    onBackClick: () -> Unit
 ) {
     Column(modifier = modifier) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -57,12 +57,14 @@ fun WarehousesMain(
             contents = mapOf(
                 getMRString(MR.strings.code, CommonGlobals.resContext) to state.items()
                     .map { it.code * it.code * it.code },
-                getMRString(MR.strings.name, CommonGlobals.resContext) to state.items().map { it.name },
+                getMRString(MR.strings.name, CommonGlobals.resContext) to state.items()
+                    .map { it.name },
                 getMRString(MR.strings.purchace_price, CommonGlobals.resContext) to state.items()
                     .map { it.purchasePrice },
                 getMRString(MR.strings.selling_price, CommonGlobals.resContext) to state.items()
                     .map { it.sellingPrice },
-                getMRString(MR.strings.available, CommonGlobals.resContext) to state.items().map { it.isAvailable },
+                getMRString(MR.strings.available, CommonGlobals.resContext) to state.items()
+                    .map { it.isAvailable },
             )
         )
     }

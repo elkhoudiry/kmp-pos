@@ -6,6 +6,7 @@ object Versions {
 
     // Gradle
     const val androidGradleBuildVersion = "7.0.4"
+    const val ktlintGradlePluginVersion = "10.2.1"
 
     // AndroidX
     const val lifecycleVersion = "2.4.0"
@@ -25,6 +26,10 @@ object ClassPaths {
     const val kotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:${Versions.kotlinVersion}"
     const val androidGradleBuildTools = "com.android.tools.build:gradle:${Versions.androidGradleBuildVersion}"
     const val mokoResourcesGenerator = "dev.icerock.moko:resources-generator:${Versions.mokoResourcesVersion}"
+}
+
+object Plugins{
+    const val ktlintGradle = "org.jlleitschuh.gradle.ktlint"
 }
 
 object AndroidXDependencies {

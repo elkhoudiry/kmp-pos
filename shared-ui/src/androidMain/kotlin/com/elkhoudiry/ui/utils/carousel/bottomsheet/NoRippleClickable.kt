@@ -1,6 +1,5 @@
 package com.elkhoudiry.ui.utils.carousel.bottomsheet
 
-
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.runtime.remember

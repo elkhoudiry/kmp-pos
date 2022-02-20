@@ -4,7 +4,6 @@ import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
@@ -23,10 +22,18 @@ expect fun isLTR(): Boolean
 expect fun getRotatedBackArrow(): ImageVector
 
 @Composable
-expect fun DropdownMenu(expanded: Boolean, onDismissRequest: () -> Unit, content : @Composable ColumnScope.() -> Unit)
+expect fun DropdownMenu(
+    expanded: Boolean,
+    onDismissRequest: () -> Unit,
+    content: @Composable ColumnScope.() -> Unit
+)
 
 @Composable
-expect fun DropdownMenuItem(modifier: Modifier = Modifier, onClick : () -> Unit, content : @Composable RowScope.() -> Unit)
+expect fun DropdownMenuItem(
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit,
+    content: @Composable RowScope.() -> Unit
+)
 
 @Composable
 expect fun VerticalScrollbar(modifier: Modifier, state: LazyListState)

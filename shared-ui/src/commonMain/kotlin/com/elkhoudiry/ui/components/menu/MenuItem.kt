@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.elkhoudiry.domain.items.models.ListingItem
@@ -17,10 +18,16 @@ import com.elkhoudiry.ui.theme.toColor
 
 @Composable
 fun MenuItem(modifier: Modifier, item: ListingItem, onClick: () -> Unit) {
-    if (item.isAvailable){
+    if (item.isAvailable) {
         BaseMenuItem(modifier = modifier, item = item, onClick = onClick)
-    }else{
-        BaseMenuItem(modifier = modifier, item = item, onClick = onClick, clickable = false, strikethrough = true)
+    } else {
+        BaseMenuItem(
+            modifier = modifier,
+            item = item,
+            onClick = onClick,
+            clickable = false,
+            strikethrough = true
+        )
     }
 }
 
@@ -37,7 +44,6 @@ private fun BaseMenuItem(
         elevation = AppTheme.dimens.menuCellElevation.dp,
         shape = AppTheme.shapes.small
     ) {
-        val style = AppTheme.type.body1
         Column(
             modifier = Modifier.padding(AppTheme.dimens.menuCellPadding.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -45,13 +51,18 @@ private fun BaseMenuItem(
         ) {
             Text(
                 text = item.name, color = AppTheme.colors.onSurface.toColor(),
-                style = if (!strikethrough) style else style.copy(textDecoration = TextDecoration.LineThrough),
+                style = getTextStyle(strikethrough),
             )
             Text(
                 text = item.sellingPrice.toString(),
                 color = AppTheme.colors.onSurface.toColor(),
-                style =  if (!strikethrough) style else style.copy(textDecoration = TextDecoration.LineThrough)
+                style = getTextStyle(strikethrough)
             )
         }
     }
+}
+
+private fun getTextStyle(strikethrough: Boolean): TextStyle {
+    val style = AppTheme.type.body1
+    return if (!strikethrough) style else style.copy(textDecoration = TextDecoration.LineThrough)
 }

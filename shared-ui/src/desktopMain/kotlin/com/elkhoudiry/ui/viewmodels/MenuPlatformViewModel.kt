@@ -17,4 +17,3 @@ actual class MenuPlatformViewModel(
         scope.launch { viewModel.onEvent(event) }
     }
 }
-

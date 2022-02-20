@@ -1,6 +1,5 @@
 package com.elkhoudiry.ui.viewmodels
 
-import com.elkhoudiry.presentation.screens.checkout.CheckoutEvent
 import com.elkhoudiry.presentation.screens.warehouses.WarehousesEvent
 import com.elkhoudiry.presentation.screens.warehouses.WarehousesViewModel
 import kotlinx.coroutines.CoroutineScope

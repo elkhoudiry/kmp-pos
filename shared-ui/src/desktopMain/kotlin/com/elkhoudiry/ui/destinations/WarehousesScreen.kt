@@ -20,23 +20,29 @@ import com.elkhoudiry.ui.viewmodels.WarehousesPlatformViewModel
 
 @Composable
 actual fun WarehousesScreen(
-    warehousesViewModel: WarehousesPlatformViewModel, navigationRepository: BaseNavigationRepository
+    warehousesViewModel: WarehousesPlatformViewModel,
+    navigationRepository: BaseNavigationRepository
 ) {
     val state = warehousesViewModel.getState().collectAsState().value
 
     AppTheme {
         Row(modifier = Modifier.fillMaxSize()) {
-            WarehousesMain(modifier = Modifier.weight(3f).fillMaxSize()
-                .background(AppTheme.colors.background.toColor()).padding(AppTheme.dimens.componentPadding.dp),
+            WarehousesMain(
+                modifier = Modifier.weight(3f).fillMaxSize()
+                    .background(AppTheme.colors.background.toColor())
+                    .padding(AppTheme.dimens.componentPadding.dp),
                 state = state,
-                onBackClick = { navigationRepository.nav(NavDestination.Main) })
+                onBackClick = { navigationRepository.nav(NavDestination.Main) }
+            )
 
             SmallSpacerHorizontal()
 
             WarehousesSide(
                 modifier = Modifier.weight(1f).fillMaxSize(),
                 state = state,
-                onWarehouseClick = { warehousesViewModel.onEvent(WarehousesEvent.OnWarehouseClick(it)) }
+                onWarehouseClick = {
+                    warehousesViewModel.onEvent(WarehousesEvent.OnWarehouseClick(it))
+                }
             )
         }
     }
