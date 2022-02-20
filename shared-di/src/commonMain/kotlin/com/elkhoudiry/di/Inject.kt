@@ -15,7 +15,7 @@ object Inject : KoinComponent {
     private val warehousesPlatformViewModel: WarehousesPlatformViewModel by inject()
 
     private val navRepository: BaseNavigationRepository by inject()
-    
+
     fun navRepository() = navRepository
 
     fun menuPlatformViewModel() = menuPlatformViewModel

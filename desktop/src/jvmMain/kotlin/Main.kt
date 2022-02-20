@@ -2,8 +2,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import com.elkhoudiry.di.Inject
-import com.elkhoudiry.di.uiModules
 import com.elkhoudiry.di.platformViewModelsModule
+import com.elkhoudiry.di.uiModules
 import com.elkhoudiry.domain.navigation.models.NavDestination
 import com.elkhoudiry.ui.app.CommonGlobals
 import com.elkhoudiry.ui.destinations.MainScreen
