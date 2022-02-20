@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-@file:Suppress("PackageDirectoryMismatch",
-               "KDocUnresolvedReference")
+@file:Suppress(
+    "PackageDirectoryMismatch",
+    "KDocUnresolvedReference"
+)
 
 package com.sahu.carousel
 
