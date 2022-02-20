@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+@file:Suppress("PackageDirectoryMismatch",
+               "KDocUnresolvedReference")
+
 package com.sahu.carousel
 
 import androidx.annotation.FloatRange

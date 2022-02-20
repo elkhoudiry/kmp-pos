@@ -1,5 +1,8 @@
-@file:Suppress("unused",
-               "KDocUnresolvedReference")
+@file:Suppress(
+    "unused",
+    "KDocUnresolvedReference",
+    "PackageDirectoryMismatch"
+)
 
 package com.sahu.foundation
 
