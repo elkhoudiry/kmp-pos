@@ -25,6 +25,7 @@ fun WarehousesSide(
             WarehousesSideItem(
                 modifier = Modifier.fillMaxWidth().height(AppTheme.dimens.warehouseItemHeight.dp),
                 warehouse = warehouse,
+                isSelected = state.selectedWarehouse == index,
                 onClick = onWarehouseClick
             )
         }

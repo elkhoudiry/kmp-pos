@@ -17,12 +17,13 @@ import com.elkhoudiry.ui.theme.toColor
 
 @Composable
 fun WarehousesSideItem(
-    modifier: Modifier, warehouse: Warehouse, onClick: (Int) -> Unit
+    modifier: Modifier, warehouse: Warehouse, isSelected: Boolean, onClick: (Int) -> Unit
 ) {
     Surface(
-        modifier = modifier.padding(AppTheme.dimens.warehouseItemPadding.dp).clickable { onClick(warehouse.id) },
+        modifier = modifier.padding(AppTheme.dimens.warehouseItemPadding.dp)
+            .clickable { onClick(warehouse.id) },
         elevation = AppTheme.dimens.warehouseItemElevation.dp,
-        color = AppTheme.colors.surface.toColor(),
+        color = if (isSelected) AppTheme.colors.primary.toColor() else AppTheme.colors.surface.toColor(),
         shape = AppTheme.shapes.small
     ) {
         Row(
@@ -31,7 +32,9 @@ fun WarehousesSideItem(
             horizontalArrangement = Arrangement.Center
         ) {
             Text(
-                text = warehouse.name, style = AppTheme.type.body1, color = AppTheme.colors.onSurface.toColor()
+                text = warehouse.name,
+                style = AppTheme.type.body1,
+                color = if (isSelected) AppTheme.colors.onPrimary.toColor() else AppTheme.colors.onSurface.toColor()
             )
         }
     }
