@@ -1,4 +1,4 @@
-package com.elkhoudiry.ui.app
+package com.elkhoudiry.di
 
 import com.elkhoudiry.data.navigation.repositories.NavigationRepository
 import com.elkhoudiry.data.repositories.menu.MenuInteractions
@@ -9,7 +9,7 @@ import com.elkhoudiry.presentation.screens.menu.MenuViewModel
 import com.elkhoudiry.presentation.screens.warehouses.WarehousesViewModel
 import org.koin.dsl.module
 
-val menuModule = module {
+val uiModules = module {
     single<BaseMenuInteractions> { MenuInteractions() }
     single<BaseNavigationRepository> { NavigationRepository() }
     single { MenuViewModel(get()) }
