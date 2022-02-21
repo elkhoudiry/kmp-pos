@@ -15,6 +15,23 @@ repositories {
     mavenCentral()
 }
 
+ktlint {
+    verbose.set(true)
+    reporters {
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
+    }
+    filter {
+        exclude { element ->
+            element.file
+                .toString()
+                .contains("generated/") ||
+                element.file
+                    .toString()
+                    .contains("AppDatabaseImpl.kt")
+        }
+    }
+}
+
 kotlin {
     android()
     jvm("desktop") {

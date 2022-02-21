@@ -33,18 +33,36 @@ subprojects {
     apply(plugin = Plugins.ktlintGradle)
 
     ktlint {
+        verbose.set(true)
+        reporters {
+            reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
+        }
         filter {
-            exclude { entry ->
-                entry.file.toString().contains("build/")
+            exclude { element ->
+                element.file
+                    .toString()
+                    .contains("generated/") ||
+                    element.file
+                        .toString()
+                        .contains("AppDatabaseImpl.kt")
             }
         }
     }
 }
 
 ktlint {
+    verbose.set(true)
+    reporters {
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
+    }
     filter {
-        exclude { entry ->
-            entry.file.toString().contains("build/")
+        exclude { element ->
+            element.file
+                .toString()
+                .contains("generated/") ||
+                element.file
+                    .toString()
+                    .contains("AppDatabaseImpl.kt")
         }
     }
 }
