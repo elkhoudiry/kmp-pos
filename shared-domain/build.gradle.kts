@@ -32,6 +32,7 @@ kotlin {
                 api(KoinDependencies.koinCore)
                 api(MultiplatformDependencies.mokoResources)
                 api(MultiplatformDependencies.sqlDelightRuntimeDriver)
+                api(MultiplatformDependencies.sqlDelightCoroutinesExtensions)
             }
         }
         val commonTest by getting {
@@ -45,7 +46,6 @@ kotlin {
                 api(JetbrainsDependencies.coroutinesAndroid)
                 api(MultiplatformDependencies.mokoResourcesAndroid)
                 api(MultiplatformDependencies.sqlDelightAndroidDriver)
-                api(MultiplatformDependencies.sqlDelightAndroidCoroutines)
                 api(KoinDependencies.koinAndroid)
             }
         }

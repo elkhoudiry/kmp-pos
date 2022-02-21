@@ -56,7 +56,7 @@ fun WarehousesMain(
             ),
             contents = mapOf(
                 getMRString(MR.strings.code, CommonGlobals.resContext) to state.items()
-                    .map { it.code * it.code * it.code },
+                    .map { it.code },
                 getMRString(MR.strings.name, CommonGlobals.resContext) to state.items()
                     .map { it.name },
                 getMRString(MR.strings.purchace_price, CommonGlobals.resContext) to state.items()

@@ -1,0 +1,29 @@
+CREATE TABLE listingItems (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    code INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    purchacePrice REAL NOT NULL,
+    sellingPrice REAL NOT NULL,
+    quantity REAL NOT NULL,
+    isAvailable INTEGER AS Boolean NOT NULL,
+
+    color TEXT DEFAULT NULL,
+    volume REAL DEFAULT NULL
+);
+
+selectAll:
+SELECT * FROM listingItems;
+
+insert:
+INSERT INTO listingItems(code, name, purchacePrice, sellingPrice, quantity, isAvailable, color, volume)
+VALUES (?, ?,?,?,?,?,?,?);
+
+insertFull:
+INSERT INTO listingItems(id, code, name, purchacePrice, sellingPrice, quantity, isAvailable, color, volume)
+VALUES ?;
+
+deleteById:
+DELETE FROM listingItems WHERE id = ?;
+
+deleteAll:
+DELETE FROM listingItems;

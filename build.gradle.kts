@@ -23,16 +23,28 @@ allprojects {
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
-
-    apply(plugin = Plugins.ktlintGradle)
 }
 
 plugins {
     id(Plugins.ktlintGradle) version Versions.ktlintGradlePluginVersion
 }
 
+subprojects {
+    apply(plugin = Plugins.ktlintGradle)
+
+    ktlint {
+        filter {
+            exclude { entry ->
+                entry.file.toString().contains("build/")
+            }
+        }
+    }
+}
+
 ktlint {
     filter {
-        exclude("**/generated/**")
+        exclude { entry ->
+            entry.file.toString().contains("build/")
+        }
     }
 }
