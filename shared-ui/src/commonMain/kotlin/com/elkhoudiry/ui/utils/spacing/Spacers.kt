@@ -14,6 +14,11 @@ fun SmallSpacerVertical() {
 }
 
 @Composable
+fun MiniSpacerHorizontal() {
+    Spacer(Modifier.width(AppTheme.dimens.miniSpacing.dp))
+}
+
+@Composable
 fun SmallSpacerHorizontal() {
     Spacer(Modifier.width(AppTheme.dimens.smallSpacing.dp))
 }

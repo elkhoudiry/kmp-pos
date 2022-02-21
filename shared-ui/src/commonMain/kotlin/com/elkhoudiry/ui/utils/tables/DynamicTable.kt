@@ -85,13 +85,15 @@ fun DynamicTable(
                                     width = lengths[j],
                                     weight = weights[j]
                                 )
-                            } else if (rowTexts[j] is Boolean) {
+                            }
+                            else if (rowTexts[j] is Boolean) {
                                 TableCell(
                                     boolean = rowTexts[j] as Boolean,
                                     width = lengths[j],
                                     weight = weights[j]
                                 )
-                            } else {
+                            }
+                            else {
                                 TableCell(
                                     text = "NaN",
                                     width = lengths[j],
@@ -163,7 +165,10 @@ fun TableCell(
             checked = boolean,
             onCheckedChange = null,
             modifier = Modifier.clickable { },
-            colors = CheckboxDefaults.colors(checkedColor = AppTheme.colors.primary.toColor())
+            colors = CheckboxDefaults.colors(
+                checkedColor = AppTheme.colors.primary.toColor(),
+                checkmarkColor = AppTheme.colors.onPrimary.toColor()
+            )
         )
     }
 }

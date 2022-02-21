@@ -20,6 +20,7 @@ import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.elkhoudiry.domain.MR
 import com.elkhoudiry.presentation.screens.checkout.CheckoutEvent
@@ -81,6 +82,7 @@ fun SideCheckoutUI(modifier: Modifier, state: CheckoutState, onEvent: (CheckoutE
                     modifier = Modifier.height(AppTheme.dimens.checkoutClearButtonHeight.dp),
                     colors = ButtonDefaults.outlinedButtonColors(
                         contentColor = AppTheme.colors.cancel.toColor(),
+                        backgroundColor = Color.Transparent
                     ),
                     border = BorderStroke(1.dp, AppTheme.colors.cancel.toColor()),
                     onClick = { onEvent(CheckoutEvent.ClearItems) }

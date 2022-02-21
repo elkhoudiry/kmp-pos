@@ -15,7 +15,7 @@ import com.elkhoudiry.ui.components.warehouses.WarehousesMain
 import com.elkhoudiry.ui.components.warehouses.WarehousesSide
 import com.elkhoudiry.ui.theme.AppTheme
 import com.elkhoudiry.ui.theme.toColor
-import com.elkhoudiry.ui.utils.spacing.SmallSpacerHorizontal
+import com.elkhoudiry.ui.utils.spacing.MiniSpacerHorizontal
 import com.elkhoudiry.ui.viewmodels.WarehousesPlatformViewModel
 
 @Composable
@@ -35,7 +35,7 @@ actual fun WarehousesScreen(
                 onBackClick = { navigationRepository.nav(NavDestination.Main) }
             )
 
-            SmallSpacerHorizontal()
+            MiniSpacerHorizontal()
 
             WarehousesSide(
                 modifier = Modifier.weight(1f).fillMaxSize(),

@@ -9,7 +9,7 @@ data class ColorPallet(
     val onSecondary: Long = 0xFF000000,
     val secondaryVariant: Long = 0xFF018786,
 
-    val background: Long = 0xFFE0E0E0,
+    val background: Long = 0xFFF4F4F4,
     val onBackground: Long = 0xFF000000,
 
     val surface: Long = 0xFFFFFFFF,
@@ -28,14 +28,16 @@ data class ColorPallet(
 val lightColors = ColorPallet()
 
 val darkColors = ColorPallet(
-    primary = 0xFFBB86FC,
+    primary = 0xFF7E57C2,
     primaryVariant = 0xFF3700B3,
     secondary = 0xFF03DAC6,
     secondaryVariant = 0xFF03DAC6,
     background = 0xFF121212,
-    surface = 0xFF121212,
-    error = 0xFFCF6679,
-    onPrimary = 0xFF000000,
+    surface = 0xFF222222,
+    confirm = 0xFF2E7D32,
+    error = 0xFFC62828,
+    cancel = 0xFFC62828,
+    onPrimary = 0xFFFFFFFF,
     onSecondary = 0xFF000000,
     onBackground = 0xFFFFFFFF,
     onSurface = 0xFFFFFFFF,

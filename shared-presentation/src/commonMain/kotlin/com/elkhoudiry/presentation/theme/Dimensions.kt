@@ -3,6 +3,7 @@ package com.elkhoudiry.presentation.theme
 data class Dimensions(
     val scale: Int
 ) {
+    val miniSpacing: Int = scale * 2
     val smallSpacing: Int = scale * 8
     val mediumSpacing: Int = scale * 16
     val largeSpacing: Int = scale * 24

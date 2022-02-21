@@ -36,7 +36,8 @@ actual fun WarehousesScreen(
             WarehousesMain(
                 modifier = Modifier.fillMaxSize()
                     .background(AppTheme.colors.background.toColor())
-                    .padding(AppTheme.dimens.componentPadding.dp),
+                    .padding(AppTheme.dimens.componentPadding.dp)
+                    .padding(bottom = 60.dp),
                 state = state,
                 onBackClick = { navigationRepository.nav(NavDestination.Main) }
             )

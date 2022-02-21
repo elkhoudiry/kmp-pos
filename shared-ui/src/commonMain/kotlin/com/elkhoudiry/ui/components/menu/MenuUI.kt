@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.OutlinedButton
@@ -20,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.elkhoudiry.domain.MR
 import com.elkhoudiry.presentation.screens.menu.MenuEvent
@@ -77,14 +79,17 @@ fun MenuUI(
             Box {
                 OutlinedButton(onClick = {
                     expandedWarehouses.value = !expandedWarehouses.value
-                }) {
+                },
+                colors = ButtonDefaults.outlinedButtonColors(
+                    backgroundColor = Color.Transparent
+                )) {
                     Text(
                         "${
                         getMRString(
                             MR.strings.warehouse,
                             CommonGlobals.resContext
                         )
-                        }: ${state.getSelectedWarehouseName()}"
+                        }: ${state.getSelectedWarehouseName()}".uppercase()
                     )
                 }
 

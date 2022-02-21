@@ -14,7 +14,7 @@ import com.elkhoudiry.ui.components.checkout.SideCheckoutUI
 import com.elkhoudiry.ui.components.menu.MenuUI
 import com.elkhoudiry.ui.theme.AppTheme
 import com.elkhoudiry.ui.theme.toColor
-import com.elkhoudiry.ui.utils.spacing.SmallSpacerHorizontal
+import com.elkhoudiry.ui.utils.spacing.MiniSpacerHorizontal
 import com.elkhoudiry.ui.viewmodels.CheckoutPlatformViewModel
 import com.elkhoudiry.ui.viewmodels.MenuPlatformViewModel
 
@@ -22,26 +22,34 @@ import com.elkhoudiry.ui.viewmodels.MenuPlatformViewModel
 actual fun MenuScreen(
     menuViewModel: MenuPlatformViewModel,
     checkoutViewModel: CheckoutPlatformViewModel,
-    navRepository: BaseNavigationRepository
+    navRepository: BaseNavigationRepository,
 ) {
     AppTheme {
         Row(
             Modifier.fillMaxSize()
         ) {
             MenuUI(
-                modifier = Modifier.weight(3f).fillMaxSize()
+                modifier = Modifier
+                    .weight(3f)
+                    .fillMaxSize()
                     .background(AppTheme.colors.background.toColor())
                     .padding(AppTheme.dimens.componentPadding.dp),
-                state = menuViewModel.getState().collectAsState().value,
+                state = menuViewModel
+                    .getState()
+                    .collectAsState().value,
                 onBackClick = { navRepository.nav(NavDestination.Main) },
                 onEvent = { menuViewModel.onEvent(it) }
             )
 
-            SmallSpacerHorizontal()
+            MiniSpacerHorizontal()
 
             SideCheckoutUI(
-                modifier = Modifier.weight(1f).fillMaxSize(),
-                state = checkoutViewModel.getState().collectAsState().value,
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize(),
+                state = checkoutViewModel
+                    .getState()
+                    .collectAsState().value,
                 onEvent = { checkoutViewModel.onEvent(it) }
             )
         }
