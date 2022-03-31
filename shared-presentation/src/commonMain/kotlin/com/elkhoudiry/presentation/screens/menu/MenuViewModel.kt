@@ -1,6 +1,7 @@
 package com.elkhoudiry.presentation.screens.menu
 
-import com.elkhoudiry.domain.items.models.ListingItem
+import com.elkhoudiry.domain.items.models.Item
+import com.elkhoudiry.domain.items.models.WarehouseItem
 import com.elkhoudiry.domain.repositories.menu.BaseMenuInteractions
 import com.elkhoudiry.domain.warehouses.models.Warehouse
 import com.elkhoudiry.presentation.screens.warehouses.fakeWarehouses
@@ -36,13 +37,13 @@ class MenuViewModel(
         )
     }
 
-    private suspend fun onMenuItemClick(item: ListingItem) {
+    private suspend fun onMenuItemClick(item: Item) {
         menuInteractions.itemClick(item)
     }
 }
 
-val fakeItems: List<ListingItem> = listOf(
-    ListingItem(
+val fakeItems: List<WarehouseItem> = listOf(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -50,7 +51,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -58,7 +59,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -66,7 +67,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -74,7 +75,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
@@ -82,7 +83,7 @@ val fakeItems: List<ListingItem> = listOf(
         25.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -90,7 +91,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -98,7 +99,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -106,7 +107,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -114,7 +115,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
@@ -122,7 +123,7 @@ val fakeItems: List<ListingItem> = listOf(
         25.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -130,7 +131,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -138,7 +139,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -146,7 +147,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -154,7 +155,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
@@ -162,7 +163,7 @@ val fakeItems: List<ListingItem> = listOf(
         25.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -170,7 +171,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -178,7 +179,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -186,7 +187,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -194,7 +195,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
@@ -202,7 +203,7 @@ val fakeItems: List<ListingItem> = listOf(
         25.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -210,7 +211,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -218,7 +219,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -226,7 +227,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -234,7 +235,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
@@ -242,7 +243,7 @@ val fakeItems: List<ListingItem> = listOf(
         25.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -250,7 +251,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -258,7 +259,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -266,7 +267,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -274,7 +275,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
@@ -282,7 +283,7 @@ val fakeItems: List<ListingItem> = listOf(
         25.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -290,7 +291,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -298,7 +299,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -306,7 +307,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -314,14 +315,14 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
         30.0,
         25.0,
         3.0
-    ),    ListingItem(
+    ),    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -329,7 +330,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -337,7 +338,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -345,7 +346,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -353,7 +354,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",
@@ -362,7 +363,7 @@ val fakeItems: List<ListingItem> = listOf(
         3.0
     ),
 
-    ListingItem(
+    WarehouseItem(
         1,
         1001,
         "Burger",
@@ -370,7 +371,7 @@ val fakeItems: List<ListingItem> = listOf(
         10.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         2,
         1002,
         "Pizza",
@@ -378,7 +379,7 @@ val fakeItems: List<ListingItem> = listOf(
         20.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         3,
         1003,
         "Koshary",
@@ -386,7 +387,7 @@ val fakeItems: List<ListingItem> = listOf(
         7.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         4,
         1004,
         "Chicken",
@@ -394,7 +395,7 @@ val fakeItems: List<ListingItem> = listOf(
         40.0,
         3.0
     ),
-    ListingItem(
+    WarehouseItem(
         5,
         1005,
         "Crepe",

@@ -12,12 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.elkhoudiry.domain.items.models.ListingItem
+import com.elkhoudiry.domain.items.models.Item
+import com.elkhoudiry.domain.items.models.WarehouseItem
 import com.elkhoudiry.ui.theme.AppTheme
 import com.elkhoudiry.ui.theme.toColor
 
 @Composable
-fun MenuItem(modifier: Modifier, item: ListingItem, onClick: () -> Unit) {
+fun MenuItem(modifier: Modifier, item: WarehouseItem, onClick: () -> Unit) {
     if (item.isAvailable) {
         BaseMenuItem(modifier = modifier, item = item, onClick = onClick)
     } else {
@@ -34,7 +35,7 @@ fun MenuItem(modifier: Modifier, item: ListingItem, onClick: () -> Unit) {
 @Composable
 private fun BaseMenuItem(
     modifier: Modifier,
-    item: ListingItem,
+    item: Item,
     onClick: () -> Unit,
     clickable: Boolean = true,
     strikethrough: Boolean = false

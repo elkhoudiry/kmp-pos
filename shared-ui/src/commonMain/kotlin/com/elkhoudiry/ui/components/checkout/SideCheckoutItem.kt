@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.elkhoudiry.domain.MR
-import com.elkhoudiry.domain.items.models.ListingItem
+import com.elkhoudiry.domain.items.models.Item
 import com.elkhoudiry.ui.app.CommonGlobals
 import com.elkhoudiry.ui.helpers.getMRString
 import com.elkhoudiry.ui.theme.AppTheme
@@ -20,7 +20,7 @@ import com.elkhoudiry.ui.theme.toColor
 @Composable
 fun SideCheckoutItem(
     modifier: Modifier,
-    items: List<ListingItem>
+    items: List<Item>
 ) {
     Surface(
         modifier = modifier,

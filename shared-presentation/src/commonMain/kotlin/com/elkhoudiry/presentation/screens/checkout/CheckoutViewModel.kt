@@ -1,6 +1,6 @@
 package com.elkhoudiry.presentation.screens.checkout
 
-import com.elkhoudiry.domain.items.models.ListingItem
+import com.elkhoudiry.domain.items.models.Item
 import com.elkhoudiry.domain.repositories.menu.BaseMenuInteractions
 import com.elkhoudiry.domain.utils.added
 import com.elkhoudiry.domain.utils.removed
@@ -32,7 +32,7 @@ class CheckoutViewModel(
         }
     }
 
-    private fun itemClick(item: ListingItem) {
+    private fun itemClick(item: Item) {
         val index = _state.value.itemsToCheckout.lastIndexOf(item)
         _state.value = _state.value.copy(
             itemsToCheckout = _state.value.itemsToCheckout.removed(index)
